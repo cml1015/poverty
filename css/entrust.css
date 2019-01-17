@@ -1,0 +1,168 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+html,body{
+	width:100%;
+	height:100%;
+	font-size: 12px;
+	box-sizing:border-box;
+	background:#fff;
+	/*   2*12=24px  */
+	padding:10px 0px;
+}
+.entrustbox{
+	width:100%;
+	height:auto;
+	padding-bottom:50px;
+}
+.entrustbox h4{
+	padding:0 10px;
+	font-size:14px;
+	margin-top:10px;
+}
+.entrustbox p{
+	font-size:14px;
+	text-indent: 14px;
+	padding:0 10px;
+	margin-top:10px;
+	line-height:20px;
+}
+.entrustbox .signaturebox{
+	width:100%;
+	height:auto;
+	padding:0 20px;
+}
+.entrustbox .signaturebox .signature{
+	width: 150px;
+    height: 70px;
+    line-height: 70px;
+    border: 1px dashed #ccc;
+    margin: 13px 8px;
+    text-align: center;
+    padding: 0!important;
+    border-radius: 5px;
+}
+.entrustbox .signaturebox img{
+	width:150px;
+	height:70px;
+	border:1px dashed #ccc;
+	border-radius: 5px;
+}
+.entrustbox .bottom{
+	width:100%;
+	height:45px;
+	padding:0 20px;
+	box-sizing:border-box;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+.entrustbox .bottom button{
+	width:60%;
+	height:100%;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:18px;
+	border-radius: 30px;
+}
+.entrustbox .signaturebox{
+	width:100%;
+	padding:0 20px;
+	overflow: hidden;
+}
+.entrustbox .signaturebox section{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.entrustbox .signaturebox div{
+	width:150px;
+	height:70px;
+	position: relative;
+    float: left;
+    margin:13px 8px;
+}
+.entrustbox .signaturebox div .icon-del{
+	position:absolute;
+	color:#F60C0C;
+	font-size:20px;
+	right:-10px;
+	top:-10px;
+}
+.entrustbox .signaturebox div .icon-bianji{
+	position:absolute;
+	color:#2D7CFF;
+	font-size:20px;
+	right:-10px;
+	bottom:-15px;
+}
+.entrustbox .markagreen,.entrustbox .markagreens{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+	z-index:99999;
+}
+.entrustbox .markagreen .markbox,.entrustbox .markagreens .markbox{
+	width:70%;
+	height:180px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.entrustbox .markagreen .markbox p,.entrustbox .markagreens .markbox p{
+	width:100%;
+	height:130px;
+	box-sizing:border-box;
+	font-size:16px;
+	margin-top: 0px;
+	line-height:130px;
+	text-align:center;
+}
+.entrustbox .markagreen .markbox .remarkbtn,.entrustbox .markagreens .markbox .remarkbtn{
+	width:100%;
+	height:50px;
+	border-top:1px solid #ccc;
+}
+.entrustbox .markagreen .markbox .remarkbtn button,.entrustbox .markagreens .markbox .remarkbtn button{
+	width:50%;
+	height:100%;
+	float:left;
+	border:none;
+	background:none;
+	color:#000;
+	outline:none;
+}
+.entrustbox .markagreen .markbox .remarkbtn button:nth-child(1),.entrustbox .markagreens .markbox .remarkbtn button:nth-child(1){
+	border-right:1px solid #ccc;
+}
+
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}

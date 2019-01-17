@@ -1,0 +1,418 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+html,body{
+	width:100%;
+	height:100%;
+	font-size: 12px;
+	box-sizing:border-box;
+	background:#fff;
+	/*   2*12=24px  */
+}
+.checkbox{
+	width:100%;
+	height:auto;
+	padding-bottom:50px;
+}
+.checkbox .listcontainer{
+	width:100%;
+	height:100%;
+}
+.checkbox .listcontainer h3{
+	width:100%;
+	height:50px;
+	line-height:50px;
+	padding-left: 10px;
+}
+.checkbox .listcontainer h6{
+	width:100%;
+	height:35px;
+	line-height: 35px;
+	background: url(../images/bgline.png) no-repeat left center;
+    background-size: 1% 18px;
+    text-indent: 10px;
+    font-size: 14px;
+}
+.checkbox .listcontainer .principal{
+	width:100%;
+	height:80px;
+	background: #fff;
+	padding:10px;
+	position:relative;
+}
+.checkbox .listcontainer .principal .fillininformation{
+	width:70px;
+	height:25px;
+	background:none;
+	color:#2D7CFF;
+	border:none;
+	outline: none;
+	border-radius: 5px;
+	position:absolute;
+	right:10px;
+	bottom:10px;
+}
+.checkbox .listcontainer .familymember{
+	width:100%;
+	height:auto;
+	background:#fff;
+	border-top:10px solid #eee;
+	border-bottom:10px solid #eee;
+	position: relative;
+	padding:10px;
+	overflow:hidden;
+}
+.checkbox .listcontainer .familymember ul{
+	width:100%;
+	height:auto;
+	padding-left:10px;
+}
+.checkbox .listcontainer .familymember ul li{
+	width:100%;
+	height:40px;
+	line-height:40px;
+}
+.checkbox .listcontainer .familymember ul li p{
+	float:left;
+}
+.checkbox .listcontainer .familymember ul li button{
+	float:right;
+	width: 70px;
+    height: 25px;
+    background:none;
+    color: #2D7CFF;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    margin-top:10px;
+}
+.checkbox .listcontainer .familymember .addfamilymember{
+	width:115px;
+	height:30px;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	border-radius: 5px;
+	float:right;
+}
+.checkbox .listcontainer .assetstatus{
+	width:100%;
+	height:150px;
+	background:#fff;
+	margin-top:10px;
+	position: relative;
+	padding:10px;
+}
+.checkbox .listcontainer .assetstatus .fillininformation{
+	width:70px;
+	height:25px;
+	background:none;
+	color:#2D7CFF;
+	border:none;
+	outline: none;
+	border-radius: 5px;
+	position:absolute;
+	right:10px;
+	top:10px;
+}
+.checkbox .listcontainer .bottom{
+	width:100%;
+	height:45px;
+	padding:0 20px;
+	box-sizing:border-box;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+.checkbox .listcontainer .bottom button{
+	width:60%;
+	height:100%;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:18px;
+	border-radius: 30px;
+}
+.checkbox .principaldetail,.checkbox .familymemberinfo,.checkbox .propertydetail{
+	width:100%;
+	height:100%;
+}
+.checkbox .propertydetail h3{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	padding-left: 10px;
+}
+.checkbox .principaldetail form .input,.checkbox .familymemberinfo form .input,.checkbox .propertydetail form .input{
+	width:100%;
+	height:auto;
+	padding:0 10px;
+	margin-bottom:10px;
+	position:relative;
+}
+.checkbox .principaldetail form .input>div div,.checkbox .familymemberinfo form .input>div div,.checkbox .propertydetail form .input>div div{
+	margin-top:10px;
+	margin-right:5px;
+	margin-bottom:10px;
+	margin-left:20px;
+}
+.checkbox .principaldetail form .input .inputtext,.checkbox .familymemberinfo form .input .inputtext,.checkbox .propertydetail form .input .inputtext{
+	display:none;
+}
+.checkbox .principaldetail form .input>label,.checkbox .familymemberinfo form .input>label,.checkbox .propertydetail form .input>label{
+	display:block;
+	width:100%;
+	height:35px;
+	line-height:35px;
+	font-size:14px;
+	margin:5px 0px;
+	background:url("../images/bgline.png") no-repeat left center;
+	background-size:1% 18px;
+	text-indent:10px;
+}
+.checkbox .principaldetail form .input input[type=text],.checkbox .familymemberinfo form .input input[type=text],.checkbox .propertydetail form .input input[type=text]{
+	width:100%;
+	height:30px;
+	outline:none;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	text-indent:10px;
+}
+.checkbox .principaldetail form .input input[type=number],.checkbox .familymemberinfo form .input input[type=number],.checkbox .propertydetail form .input input[type=number]{
+	width:100%;
+	height:30px;
+	outline:none;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	text-indent:10px;
+}
+form .input input[name^=insurance_],form .input input[name^=health_],form .input input[name^=jobCondition_],form .input input[name^=insurance_],form .input input[name=familyAverageIncome],form .input input[name^=relation_],form .input input[name=incomeTotal]{
+	width:100px!important;
+	height:30px;
+	outline:none;
+	border-bottom:1px solid #ccc;
+}
+.checkbox .principaldetail form .input .icon-xiangji,.checkbox .principaldetail form .input .icon-rili,.checkbox .familymemberinfo form .input .icon-xiangji,.checkbox .familymemberinfo form .input .icon-rili{
+	position:absolute;
+	right:20px;
+	bottom:3px;
+}
+.checkbox .principaldetail form .addfamilybtn,.checkbox .familymemberinfo form .again{
+	width:100%;
+	height:30px;
+	padding:0 20px;
+	box-sizing:border-box;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:right;
+}
+.checkbox .principaldetail form .addfamilybtn button,.checkbox .familymemberinfo form .again button{
+	width:120px;
+	height:100%;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:14px;
+	border-radius: 5px;
+}
+.checkbox .principaldetail .principaldetailbottom,.checkbox .familymemberinfo .familymemberinfobottom,.checkbox .propertydetail .bottom{
+	width:100%;
+	height:45px;
+	padding:0 20px;
+	box-sizing:border-box;
+	margin-top:30px;
+	margin-bottom:30px;
+	text-align:center;
+}
+.checkbox .principaldetail .principaldetailbottom button,.checkbox .familymemberinfo .familymemberinfobottom button,.checkbox .propertydetail .bottom button{
+	width:60%;
+	height:100%;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:18px;
+	border-radius: 30px;
+}
+.checkbox .mark{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+	z-index:99999;
+}
+.checkbox .mark .markbox{
+	width:70%;
+	height:250px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.checkbox .mark .markbox h6{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background:#2D7CFF;
+	color:#fff;
+	font-size:16px;
+	border-radius:5px 5px 0px 0px;
+	margin:0!important;
+}
+.checkbox .mark .markbox p{
+	width:100%;
+	height:150px;
+	box-sizing:border-box;
+	padding:30px 10px;
+	font-size:16px;
+}
+.checkbox .mark .markbox .remarkbtn{
+	width:100%;
+	height:60px;
+	padding:0 30px;
+}
+.checkbox .mark .markbox .remarkbtn button{
+	width:100%;
+	height:70%;
+	border:none;
+	background:#2D7CFF;
+	border-radius:30px;
+	color:#fff;
+	outline:none;
+}
+.checkbox .markagreen{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+}
+.checkbox .markagreen .markbox{
+	width:70%;
+	height:180px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.checkbox .markagreen .markbox p{
+	width:100%;
+	height:130px;
+	box-sizing:border-box;
+	font-size:16px;
+	margin: 0!important;
+	line-height:130px;
+	text-align:center;
+}
+.checkbox .markagreen .markbox .remarkbtn{
+	width:100%;
+	height:50px;
+	border-top:1px solid #ccc;
+}
+.checkbox .markagreen .markbox .remarkbtn button{
+	width:50%;
+	height:100%;
+	float:left;
+	border:none;
+	background:none;
+	color:#000;
+	outline:none;
+}
+.checkbox .markagreen .markbox .remarkbtn button:nth-child(1){
+	border-right:1px solid #ccc;
+}
+.checkbox .markagreen .markbox .remarkbtn button:nth-child(2){
+	color:#2D7CFF;
+}
+.checkbox .markagreen{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+}
+.checkbox .markagreen .markbox{
+	width:70%;
+	height:180px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.checkbox .markagreen .markbox p{
+	width:100%;
+	height:130px;
+	box-sizing:border-box;
+	font-size:16px;
+	margin: 0!important;
+	line-height:130px;
+	text-align:center;
+}
+.checkbox .markagreen .markbox .remarkbtn{
+	width:100%;
+	height:50px;
+	border-top:1px solid #ccc;
+}
+.checkbox .markagreen .markbox .remarkbtn button{
+	width:50%;
+	height:100%;
+	float:left;
+	border:none;
+	background:none;
+	color:#000;
+	outline:none;
+}
+.checkbox .markagreen .markbox .remarkbtn button:nth-child(1){
+	border-right:1px solid #ccc;
+}
+.checkbox .markagreen .markbox .remarkbtn button:nth-child(2){
+	color:#2D7CFF;
+}
+
+
+
+
+
+
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}

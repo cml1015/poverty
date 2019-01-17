@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>民政社会救助调查</title>
+    <link rel="stylesheet" href="./css/photograph.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_979530_ulxahkzrond.css">
+    <script src="./js/jquery.js"></script>
+    <script src="./js/public.js"></script>
+    <link rel="stylesheet" href="./bootstrap-3.3.7/dist/css/bootstrap.css"/>
+    <script src="./bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./scripts/ui.js"></script>
+    <script type="text/javascript" src="./scripts/qiniu.min.js"></script>
+    <script type="text/javascript" src="./scripts/highlight.js"></script>
+    <script type="text/javascript" src="./scripts/main1.js"></script>
+</head>
+<body>
+    <div class="photographbox">
+        <div class="input inputfile">
+            <label for="" class="accountBookPics">1、户口簿</label>
+            <div class='pick-file12' id="container12">
+                <div class='upload-12' id="pickfiles12">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="idCardPics">2、身份证(请拍照或上传身份证正反面)</label>
+            <div class='pick-file2' id="container2">
+                <div class='upload-2' id="pickfiles2">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="maritalPics">3、婚姻状况[备注：证件或相关证明资料]</label>
+            <div class='pick-file4' id="container4">
+                <div class='upload-4' id="pickfiles4">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="diseaselPics">4、疾病[诊断证明或病情的相关证明材料]</label>
+            <div class='pick-file5' id="container5">
+                <div class='upload-5' id="pickfiles5">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="disabilityPics">5、残疾证</label>
+            <div class='pick-file6' id="container6">
+                <div class='upload-6' id="pickfiles6">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="schoolPics">6、在校证明</label>
+            <div class='pick-file7' id="container7">
+                <div class='upload-7' id="pickfiles7">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="incomePics">7、收入证明【备注：失业人员应当提供人力资源社会保障机构出具的《就业失业登记证》，单位出具解除劳动关系证明，以及其它需要提供的相关材料】</label>
+            <div class='pick-file8' id="container8">
+                <div class='upload-8' id="pickfiles8">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="otherPics">8、其他相关材料【备注：如房产证、房屋租赁协议，土地承包经营证明等】</label>
+            <div class='pick-file9' id="container9">
+                <div class='upload-9' id="pickfiles9">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="specialPics">9、家庭特殊情况需要提交的相关证明材料:</label>
+            <div class='pick-file10' id="container10">
+                <div class='upload-10' id="pickfiles10">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="input inputfile">
+            <label for="" class="cardPics">10、惠民一卡通:</label>
+            <div class='pick-file11' id="container11">
+                <div class='upload-11' id="pickfiles11">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <button id="submitphotograph">完成</button>
+        </div>
+        <div class="mark">
+            <div class="markbox">
+                <h6>提示</h6>
+                <p class="errortext"></p>
+                <div class="remarkbtn">
+                    <button id="markbtn">确定</button>
+                </div>
+            </div>
+        </div>
+        <div class="markagreen">
+            <div class="markbox">
+                <p>确认删除图片?</p>
+                <div class="remarkbtn">
+                    <button id="cancel">取消</button>
+                    <button id="agreement">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const oHtml = document.getElementsByTagName('html')[0]
+        const width = oHtml.clientWidth;
+        // 320px的屏幕基准像素为12px
+        oHtml.style.fontSize = 12 * (width / 320) + "px";
+        $(function(){ 
+            pushHistory(); 
+                window.addEventListener("popstate", function(e) {
+                    window.location.href="./apply.html" 
+            }, false); 
+            function pushHistory() { 
+                var state = { 
+                    title: "title", 
+                    url: "#" 
+                }; 
+                window.history.pushState(state, "title", "#"); 
+            } 
+        });
+        if(isEmpty(window.sessionStorage.getItem("id")) && isEmpty(window.sessionStorage.getItem("status"))){
+            //去请求主图片的回显信息接口
+            var data={
+                operaterId:window.sessionStorage.getItem("operaterId"),
+                id:window.sessionStorage.getItem("id"),//申请人id 
+                clientType:"5"
+                
+            }
+            console.log(data)
+            //请求新增承诺书的接口
+            $.ajax({
+                url: getUrl() + '/poverty/wechat/getPictures',
+                type: 'POST',
+                dataType: 'JSON',
+                data: JSON.stringify(data),
+                crossDomain: true,
+                contentType: 'application/json;charset=utf-8',
+                success: function (data) {
+                    if (data.result) {
+                        console.log(data.data)
+                        var data=data.data;
+                        $(".photographbox").find("label").each(function(i){
+                            console.log($(this).attr("class")+"------class");
+                            var classname=$(this).attr("class")
+                            var imgdata=data[classname]
+                            var str="";
+                            for(var j=0;j<imgdata.length;j++){
+                                    str+="<div class='upload-img'><img src='" + imgdata[j] + "' alt='' />" +
+                                    "<input type='hidden' name='"+classname+"' value='" + imgdata[j] + "'>" +
+                                    "<div class='upload-del'><i class='iconfont icon-del'></i></div>" +
+                                    "</div>";                                        
+                            }
+                            $(this).after(str)
+                        })
+                    }
+                },
+                error: function (error) {
+                    
+                }
+            });
+        }
+        //点击总的完成按钮
+        $("#submitphotograph").on("click",function(){
+            //去请求接口提交核对表信息
+            var accountBookPics="";//户口簿
+            $("input[name='accountBookPics']").each(function(){
+                accountBookPics+=$(this).val()+","
+            })
+            accountBookPics=douhao(accountBookPics);
+            var idCardPics="";//身份证正反面
+            $("input[name='idCardPics']").each(function(){
+                idCardPics+=$(this).val()+","
+            })
+            idCardPics=douhao(idCardPics);
+            var maritalPics="";//婚姻状况
+            $("input[name='maritalPics']").each(function(){
+                maritalPics+=$(this).val()+","
+            })
+            maritalPics=douhao(maritalPics);
+            var diseaselPics="";//疾病
+            $("input[name='diseaselPics']").each(function(){
+                diseaselPics+=$(this).val()+","
+            })
+            diseaselPics=douhao(diseaselPics);
+            var disabilityPics="";//残疾证
+            $("input[name='disabilityPics']").each(function(){
+                disabilityPics+=$(this).val()+","
+            })
+            disabilityPics=douhao(disabilityPics);
+            var schoolPics="";//在校证明
+            $("input[name='schoolPics']").each(function(){
+                schoolPics+=$(this).val()+","
+            })
+            schoolPics=douhao(schoolPics);
+            var incomePics="";//收入证明
+            $("input[name='incomePics']").each(function(){
+                incomePics+=$(this).val()+","
+            })
+            incomePics=douhao(incomePics);
+            var otherPics="";//其他相关材料
+            $("input[name='otherPics']").each(function(){
+                otherPics+=$(this).val()+","
+            })
+            otherPics=douhao(otherPics);
+            var specialPics="";//家庭特殊情况
+            $("input[name='specialPics']").each(function(){
+                specialPics+=$(this).val()+","
+            })
+            specialPics=douhao(specialPics);
+            var cardPics="";//惠民一卡通
+            $("input[name='cardPics']").each(function(){
+                cardPics+=$(this).val()+","
+            })
+            cardPics=douhao(cardPics);
+            if(isEmpty(accountBookPics)){
+                var data={
+                    operaterId:window.sessionStorage.getItem("operaterId"),
+                    id:window.sessionStorage.getItem("id"),//申请人id 
+                    accountBookPics:accountBookPics,//户口簿
+                    idCardPics:idCardPics,//身份证正反面
+                    maritalPics:maritalPics,//婚姻状况
+                    diseaselPics:diseaselPics,//疾病
+                    disabilityPics:disabilityPics,//残疾证
+                    schoolPics:schoolPics,//在校证明
+                    incomePics:incomePics,//收入证明
+                    otherPics:otherPics,//其他相关材料
+                    specialPics:specialPics,//家庭特殊情况
+                    cardPics:cardPics,//惠民一卡通
+                    clientType:"5"
+                    
+                }
+                console.log(data)
+                //请求新增承诺书的接口
+                $.ajax({
+                    url: getUrl() + '/poverty/wechat/addPhotos',
+                    type: 'POST',
+                    dataType: 'JSON',
+                    data: JSON.stringify(data),
+                    crossDomain: true,
+                    contentType: 'application/json;charset=utf-8',
+                    success: function (data) {
+                        if (data.result) {
+                            //新增成功以后跳转到五个表单页面
+                            if(isEmpty(data.data)){
+                                window.sessionStorage.setItem("id",data.data.id);
+                                window.sessionStorage.setItem("isReport",data.data.isReport);
+                            }
+                            window.location.href="apply.html"
+                        } else {
+                            $(".mark").show();
+                            $(".mark").find(".errortext").html(data.msg);
+                        }
+                    },
+                    error: function (error) {
+                        
+                    }
+                });
+            }else{
+                $(".mark").show();
+                $(".mark").find(".errortext").html("请上传您的户口本照片");
+            }
+            
+        })
+        //去掉字符串的第一个或者最后一个逗号
+        function douhao(str){
+            str=(str.substring(str.length-1)==',')?str.substring(0,str.length-1):str;
+            str=(str.substr(0,1)==',')?str.substr(1):str;
+            return str;
+        }
+         var delindex="",parentindex="";
+        //点击图片的删除按钮
+        $(".input").on("click",".upload-del",function(){
+            $(".markagreen").show();
+            parentindex=$(this).parents(".inputfile").index();
+            delindex=$(this).parents(".inputfile").find(".upload-img").index();
+        })
+        //点击确定删除按钮
+        $("#agreement").on("click",function(){
+            $(".inputfile").eq(parentindex).find(".upload-img").eq(delindex-1).remove();
+            $(".markagreen").hide();
+        })
+        //点击取消按钮
+        $("#cancel").on("click",function(){
+            $(".markagreen").hide();
+        })
+        $("#markbtn").on("click",function(){
+            $(".mark").hide();
+        })
+    </script>
+</body>
+</html>

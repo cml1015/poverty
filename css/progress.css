@@ -1,0 +1,207 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+html,body,.progressbox,.viewprogress,.progresscontainer{
+	width:100%;
+	height:100%;
+	font-size: 12px;
+	box-sizing:border-box;
+	background:#fff;
+	/*   2*12=24px  */
+}
+.viewprogress{
+	position:relative;
+}
+.viewprogress .viewprogressbox{
+	width:90%;
+	height:50%;
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	font-size:16px;
+	text-align:center;
+}
+.viewprogress .viewprogressbox p{
+	text-align: left;
+}
+.viewprogress .viewprogressbox button{
+	width:50%;
+	height:40px;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:16px;
+	border-radius: 5px;
+	margin-top: 20px;
+}
+.progressbox .progresscontainer{
+	display:block;
+}
+.progressbox .progresscontainer .progressmain button{
+	width:120px;
+	height:35px;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:14px;
+	border-radius:5px;
+	margin:15px 30px;
+}
+.progressbox .progresscontainer .progressmain .progresslist{
+	width:96%;
+	height:150px;
+	background: url(../images/dlbg.png) no-repeat;
+	background-size: 100% 100%;
+	margin-left:2%;
+}
+.progressbox .progresscontainer .progressmain .progresslist p{
+	width:100%;
+	height:30px;
+	line-height:25px;
+}
+.progressbox .progresscontainer .progressmain .progresslist dl{
+	width:100%;
+	height:150px;
+	padding:10px;
+}
+.progressbox .progresscontainer .progressmain .progresslist dl dt{
+	width:30%;
+	height:100%;
+	float:left;
+	padding:10px;
+}
+.progressbox .progresscontainer .progressmain .progresslist dl dt img{
+	width:100%;
+	height: 70%;
+    margin-top: 20%;
+}
+.progressbox .progresscontainer .progressmain .progresslist dl dd{
+	float:left;
+	width:70%;
+	height:100%;
+	padding:15px 0;
+}
+.progressbox .progresscontainer .progressmain .progresslist dl dd h6{
+	color:#2D7CFF;
+}
+.progressbox .progresscontainer .progressmain .detaildiv{
+	width:100%;
+	height:35px;
+	line-height:35px;
+	font-size:14px;
+	padding-left:20px;
+	background: url(../images/bgline.png) no-repeat 20px center;
+    background-size: 1% 18px;
+    text-indent: 10px;
+
+}
+.progressbox .progresscontainer .progressmains{
+	width:100%;
+	height:100%;
+	padding-top:30px;
+}
+.progressbox .progresscontainer .progressmains ul{
+	    margin-bottom: 60px;
+}
+.progressbox .progresscontainer .progressmains ul li{
+	width: 96%;
+    height: 100px;
+    margin-left: 2%;
+    padding: 25px 30px;
+    background: url(../images/libg.png) no-repeat;
+    background-size: 100% 100%;
+    position:relative;
+}
+.progressbox .progresscontainer .progressmains ul li.last{
+	text-align:center;
+}
+.progressbox .progresscontainer .progressmains ul li .icon-iconfontjiantou2{
+	position:absolute;
+	right:20px;
+	top:42px;
+}
+.progressbox .progresscontainer .progressmains ul li h5{
+	color:#ff00009e;
+}
+.progressbox .progresscontainer .progressmains ul li p{
+	margin-top:10px;
+}
+.progressbox .progressfooter{
+	width:100%;
+	height:45px;
+	/*line-height: 45px;*/
+	position:fixed;
+	bottom:0;
+	left:0;
+	display: flex;
+	background: #fff;
+	/*background:url(../images/footerbg.png) no-repeat;
+	background-size:100% 100%;*/
+}
+.progressbox .progressfooter div{
+	float:left;
+	flex:1;
+	text-align:center;
+	color:#666666;
+}
+.progressbox .progressfooter div .iconfont{
+	font-size:20px;
+}
+.progressbox .progressfooter div span{
+	display:inline-block;
+	width:35px;
+	height:35px;
+	background:url(../images/apply.png) no-repeat center;
+	background-size:100% 100%;
+	position: absolute;
+    top: -15px;
+    left: 45%;
+}
+.progressbox .progressfooter div a{
+	display:block;
+	color:#666666;
+}
+.progressbox .progressfooter div:nth-child(2) a{
+	padding-top:25px;
+}
+.progressbox .progressfooter div.active{
+	color:#2D7CFF;
+}
+.progressbox .progressfooter div.active a{
+	color:#2D7CFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}

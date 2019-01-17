@@ -1,0 +1,137 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+html,body,.homebox{
+	width:100%;
+	height:100%;
+	font-size: 12px;
+	box-sizing:border-box;
+	background:#fff;
+	/*   2*12=24px  */
+}
+.homebox .banner{
+	width:100%;
+	height:200px;
+	padding:5px;
+}
+.homebox .banner img{
+	width:100%;
+	height:100%;
+}
+.homebox .homecontainer{
+	width:100%;
+	height:auto;
+}
+.homebox .homecontainer h5{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	padding-left:10px;
+	font-size:16px;
+	background: url(../images/left.png) no-repeat 10px center;
+	text-indent:20px;
+}
+.homebox .homecontainer dl{
+	width:100%;
+	height:120px;
+	border-bottom:1px solid #ccc;
+	padding:10px;
+}
+.homebox .homecontainer dl dt{
+	width:40%;
+	height:100%;
+	float:left;
+}
+.homebox .homecontainer dl dt img{
+	width:100%;
+	height:100%;
+}
+.homebox .homecontainer dl dd{
+	width:60%;
+	height:100%;
+	float:left;
+	padding:0 10px;
+}
+.homebox .homecontainer dl dd h6{
+	font-size:14px;
+	margin-top:5px;
+}
+.homebox .homecontainer dl dd p{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+	text-indent:12px;
+	line-height: 20px;
+	margin-top:15px;
+}
+.homebox .homefooter{
+	width:100%;
+	height:45px;
+	/*line-height: 45px;*/
+	position:fixed;
+	bottom:0;
+	left:0;
+	display: flex;
+	/*background:url(../images/footerbg.png) no-repeat;
+	background-size:100% 100%;*/
+}
+.homebox .homefooter div{
+	float:left;
+	flex:1;
+	text-align:center;
+	color:#666666;
+}
+.homebox .homefooter div .iconfont{
+	font-size:20px;
+}
+.homebox .homefooter div span{
+	display:inline-block;
+	width:35px;
+	height:35px;
+	background:url(../images/apply.png) no-repeat center;
+	background-size:100% 100%;
+	position: absolute;
+    top: -15px;
+    left: 45%;
+}
+.homebox .homefooter div a{
+	display:block;
+	color:#666666;
+}
+.homebox .homefooter div:nth-child(2) a{
+	padding-top:25px;
+}
+.homebox .homefooter div.active{
+	color:#2D7CFF;
+}
+.homebox .homefooter div.active a{
+	color:#2D7CFF;
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,220 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+html,body,.applybox{
+	width:100%;
+	height:100%;
+	font-size: 12px;
+	box-sizing:border-box;
+	background:#fff;
+	/*   2*12=24px  */
+}
+.applybox .mark{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+	z-index:99999;
+}
+.applybox .mark .markbox{
+	width:70%;
+	height:250px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.applybox .mark .markbox p{
+	width:100%;
+	height:200px;
+	box-sizing:border-box;
+	padding:20px 10px;
+	font-size:16px;
+}
+.applybox .mark .markbox .remarkbtn{
+	width:100%;
+	height:50px;
+	border-top:1px solid #ccc;
+}
+.applybox .mark .markbox .remarkbtn button{
+	width:50%;
+	height:100%;
+	float:left;
+	border:none;
+	background:none;
+	color:#000;
+	outline:none;
+}
+.applybox .mark .markbox .remarkbtn button:nth-child(1){
+	border-right:1px solid #ccc;
+}
+.applybox .applycontainer{
+	width:100%;
+	height:100%;
+}
+.applybox .applycontainer p{
+	width:100%;
+	height:100px;
+	line-height:30px;
+	font-size:16px;
+	padding:20px 15px;
+	background: url(../images/pbg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.applybox .applycontainer ul{
+	width:100%;
+	height:auto;
+	padding:0 35px;
+}
+.applybox .applycontainer ul li{
+	width: 100%;
+    height: 80px;
+    font-size: 14px;
+    padding:22px 30px 0px 20px;
+    margin-bottom: 10px;
+    position: relative;
+    background: url(../images/libg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.applybox .applycontainer ul li span:nth-child(1){
+	width:30px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	border-radius:5px;
+	float:left;
+	color:#fff;
+	margin-right: 5px;
+}
+.applybox .applycontainer ul li:nth-child(1) span:nth-child(1){
+	background: #8CD554;
+}
+.applybox .applycontainer ul li:nth-child(2) span:nth-child(1){
+	background: #5582EA;
+}
+.applybox .applycontainer ul li:nth-child(3) span:nth-child(1){
+	background: #EA809E;
+}
+.applybox .applycontainer ul li:nth-child(4) span:nth-child(1){
+	background: #7970F1;
+}
+.applybox .applycontainer ul li:nth-child(5) span:nth-child(1){
+	background: #C96EFD;
+}
+.applybox .applycontainer ul li span:nth-child(2){
+	vertical-align: middle;
+}
+
+.applybox .applycontainer .icon-iconfontjiantou2{
+	position:absolute;
+	right: 10px;
+    top: 30px;
+}
+.applybox .applycontainer .reportbox{
+	width:100%;
+	height:45px;
+	padding:0 20px;
+	box-sizing:border-box;
+	margin-top:30px;
+	text-align:center;
+}
+.applybox .applycontainer .reportbox button{
+	width:80%;
+	height:80%;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:18px;
+	border-radius: 30px;
+}
+.applybox .applycontainer .reportbox button.yes{
+	background:#2D7CFF;
+}
+.applybox .applycontainer .reportbox button.no{
+	background:#ccc;
+}
+.remind{
+	font-size:14px!important;
+}
+.applybox .marks{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+	z-index:99999;
+}
+.applybox .marks .markbox{
+	width:70%;
+	height:250px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.applybox .marks .markbox h6{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background:#2D7CFF;
+	color:#fff;
+	font-size:16px;
+	border-radius:5px 5px 0px 0px;
+}
+.applybox .marks .markbox p{
+	width:100%;
+	height:150px;
+	box-sizing:border-box;
+	padding:30px 10px;
+	font-size:16px;
+}
+.applybox .marks .markbox .remarkbtn{
+	width:100%;
+	height:60px;
+	padding:0 30px;
+}
+.applybox .marks .markbox .remarkbtn button{
+	width:100%;
+	height:70%;
+	border:none;
+	background:#2D7CFF;
+	border-radius:30px;
+	color:#fff;
+	outline:none;
+}
+
+
+
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}

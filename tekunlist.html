@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>特困服务号项目总结</title>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/public.js"></script>
+    <link rel="stylesheet" href="./bootstrap-3.3.7/dist/css/bootstrap.css"/>
+    <script src="./bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./scripts/ui.js"></script>
+    <script type="text/javascript" src="./scripts/qiniu.min.js"></script>
+    <script type="text/javascript" src="./scripts/highlight.js"></script>
+    <script type="text/javascript" src="./scripts/main1.js"></script>
+    <style>
+    form .inputfile #file{
+        width:100px;
+        height:100px;
+        border:1px solid #ccc;
+        background:#ECECEC;
+        z-index:999;
+        text-align:center;
+        line-height:100px;
+    }
+    form .inputfile #file .icon-xiangji{
+        text-align:center;
+        position:static;
+        font-size: 30px;
+    }
+    form .inputfile input{
+        position:absolute;
+        left:10px;
+        top:30px;
+        width:100px;
+        height:100px;
+        opacity:0;
+    }
+    </style>
+</head>
+<body>
+    <div class="input">
+        <label for="">身份证号:</label>
+        <input type="file" id="img" name="idCard"  accept="image/*" multiple="multiple" onchange="gettoken(event)" placeholder="请输入身份证号或拍摄身份证">
+    </div>
+    <form action="">
+        <div class="input inputfile">
+            <label for="">如已有书写申请书:</label>
+            <div class='pick-file1' id="container1">
+                <div class='upload-1' id="pickfiles1">
+                    <i class="iconfont icon-xiangji1"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+	<script>
+	// 一、移动端评估尺寸的自适应
+	// 	meta标签和js动态设置宽高
+	// 	1.上面的meta标签
+	// 	2.下面三行代码引用到js里面
+	// 	const oHtml = document.getElementsByTagName('html')[0]
+	// 	const width = oHtml.clientWidth;
+	// 	// 320px的屏幕基准像素为12px
+	// 	oHtml.style.fontSize = 12 * (width / 320) + "px";
+
+
+	// 二、jSignature手写签名插件（横屏签字）
+	// 	引用jSignature.min.js文件去签名并且生成base64上传到七牛服务器
+	// 三、控制浏览器的返回键
+	// 	用一段js
+	// 	$(function(){ 
+	// 		pushHistory(); 
+	// 			window.addEventListener("popstate", function(e) {
+	// 			//在这里执行点击浏览器返回键想要执行的操作
+	// 		}, false); 
+	// 		function pushHistory() { 
+	// 			var state = { 
+	// 				title: "title", 
+	// 				url: "#" 
+	// 			}; 
+	// 			window.history.pushState(state, "title", "#"); 
+	// 		} 
+	// 	});
+ //        四、微信浏览器兼容拍照上传和上传图片到七牛服务器啊
+ //         原本的就是可以的不过要兼容微信浏览器  要去修改qiniu.js里面的创建input要添加这个accept="image/*"属性
+ //        五、身份证识别获取身份证上的信息
+	</script>
+    <!-- 横屏签字 -->
+	<script>
+            // 具体的签名代码
+            //初始化签字插件
+            // var arguments = {
+            //             width: '100%',
+            //             height: '100%',
+            //             color:'#000',
+            //             "decor-color": "transparent",//去除默认画布上那条横线
+            //             lineWidth: '3'
+            //         };
+            // $(".g-signatrue-body").jSignature(arguments);
+
+            // //获取画布外框的宽高，用于绘制隐藏canvas使用。
+            // var hiddenWidth = $(".g-signatrue-body").css('width');
+            // var hiddenHeight = $(".g-signatrue-body").css('height');
+
+            // /**
+            //  * signatureData
+            //  * 用于存储用户签名数据
+            //  * @type {string}
+            //  */
+            // var signatureData = '';
+
+            // /**
+            //  * isDraw
+            //  * 用于判断用户是否已签字，是则true,否则false,默认false.
+            //  * @type {boolean}
+            //  */
+            // var isDraw = false;
+
+            // //用户触摸事件，只要有触摸，isDraw则变为true.
+            // $('body').on('touchmove', '.jSignature', function () {
+            //     isDraw = true;
+            // });
+
+            // //重置按钮点击事件，只要点击重置，isDraw则恢复默认.
+            // $('.u-reset').on('click', function () {
+            //     $(".g-signatrue-body").jSignature('reset');
+            //     isDraw = false;
+            // });
+
+            // //用户提交签名
+            // $('.u-submit').on('click', function () {
+            //     $(this).attr('disabled','true');
+            //     //重置变量并获取未旋转画布上的内容
+            //     signatureData = '';
+            //     signatureData = $(".g-signatrue-body").jSignature('getData', 'default');
+              
+            //     //如果现在有隐藏画布，那就全删掉重新建立，因为怕互相影响。
+            //     $('.hide-canvas').remove();
+            //     //建立画布，因为要旋转，所以新画布的宽就是原画布的高，新画布的高就是原画布的宽。
+            //     $('body').append('<canvas style="display: none;" class="hide-canvas" width="' + hiddenHeight + '" height="' + hiddenWidth + '"></canvas>');
+            //     //重新绘制图像
+            //     var ctx = document.querySelector('.hide-canvas').getContext("2d");
+            //     //新建img对象
+            //     var img = new Image();
+            //     //把img的值设置为原画布的base64数据;
+            //     img.src = signatureData;
+            //    //绘制
+            //     img.onload = function (ev) {
+            //         //获取新画布的宽高中心点
+            //         var width = Math.round($('.jSignature').css('height').replace('px', '') / 2);
+            //         var height = Math.round($('.jSignature').css('width').replace('px', '') / 2);
+            //         //保存canvas状态
+            //         ctx.save();
+            //         //把canvas的 0,0（起点位置）设置为中心点
+            //         ctx.translate(width, height);
+            //       //画布旋转（旋转度数需要用  度数 *Math.PI/180 来计算）
+            //         ctx.rotate(-90 * Math.PI / 180)
+            //         //绘图
+            //         ctx.drawImage(img, -img.width / 2, -img.height / 2);
+            //         //恢复canvas状态
+            //         ctx.restore();
+            //         //判断是否已经签名
+            //         if (!isDraw) {
+            //             tanwin('您还未签名');
+            //             $('.u-submit').removeAttr('disabled');
+            //         } else {
+            //             //获得旋转后的签名数据
+            //             var _signature = document.querySelector('.hide-canvas').toDataURL('image/png');
+            //             console.log(_signature)
+            //             $(".loadbox").show();
+            //             getToken(_signature)
+            //         }
+            //     };
+            // });
+            // function tanwin(msg){
+            //     alert(msg)
+            // }
+            // //获取七牛token
+            // function getToken(imgBase64){
+            //     $.ajax({
+            //     url: '自己的获取七牛token的路径',
+            //     type: 'post',
+            //     dataType: "JSON",
+            //     crossDomain: true,
+            //     data: JSON.stringify({}),
+            //     contentType: 'application/json;charset=utf-8',
+            //     success: function (data) {
+            //             putb64(imgBase64,data.token)
+            //         }
+            //     })
+            // }
+            // function putb64(picBase,token){
+            //     /*picUrl用来存储返回来的url*/
+            //     var picUrl;
+
+            //     /*把头部的data:image/png;base64,去掉。（注意：base64后面的逗号也去掉）*/
+            //     picBase=picBase.substring(22);
+
+            //     /*通过base64编码字符流计算文件流大小函数*/
+            //     function fileSize(str)
+            //     {
+            //         var fileSize;
+            //         if(str.indexOf('=')>0)
+            //         {
+            //             var indexOf=str.indexOf('=');
+            //             str=str.substring(0,indexOf);//把末尾的’=‘号去掉
+            //         }
+
+            //         fileSize=parseInt(str.length-(str.length/8)*2);
+            //         return fileSize;
+            //     }
+
+            //     /*把字符串转换成json*/
+            //     function strToJson(str)
+            //     { 
+            //         var json = eval('(' + str + ')'); 
+            //         return json; 
+            //     }
+
+            //     var url = "http://up.qiniu.com/putb64/"+fileSize(picBase); 
+            //     var xhr = new XMLHttpRequest();
+            //     xhr.onreadystatechange=function()
+            //     {
+                    
+            //         if (xhr.readyState==4){
+            //             var keyText=xhr.responseText;
+
+            //             /*返回的key是字符串，需要装换成json*/
+            //             keyText=strToJson(keyText);
+
+            //             /* http://ojvh6i96g.bkt.clouddn.com/是我的七牛云空间网址，keyText.key 是返回的图片文件名*/
+            //             picUrl="http://image.datalove.cn/"+keyText.key;
+                      
+            //             console.log(picUrl)                  
+
+            //         }
+            //     }
+            //     xhr.open("POST", url, true); 
+            //     xhr.setRequestHeader("Content-Type", "application/octet-stream"); 
+            //     xhr.setRequestHeader("Authorization", "UpToken "+token); 
+            //     xhr.send(picBase);
+
+            //  }
+	</script>
+    <!-- 身份证识别 -->
+    <script>
+            function gettoken(event){
+                $.ajax({
+                url: "http://192.168.1.82:8080/assessment/config/getAipOAuthToken",
+                type: 'post',
+                dataType: "JSON",
+                crossDomain: true,
+                data: JSON.stringify({}),
+                contentType: 'application/json;charset=utf-8',
+                success: function(data) {
+                        //请求成功处理，和本地回调完全一样
+                        console.log(data)
+                        getImg (event,data.data)
+                    }
+                });
+            }
+            // 监听图片选择事件
+            function getImg (event,access_token) {
+                var imageBase = "";
+                var reader = new FileReader();
+                reader.readAsDataURL(event.target.files[0]);
+                reader.onload = function (e) {
+                    imageBase = e.target.result.replace("data:image/png;base64,","");
+                    $("#showImg").prop("src", "data:image/png;base64," + imageBase);
+                    $.ajax({
+                        header: {
+                            "Content-Type": "application/x-www-form-urlencoded"
+                        },
+                        type: "post",
+                        url: "https://aip.baidubce.com/rest/2.0/ocr/v1/idcard",
+                        async: true,
+                        data: {
+                            access_token: access_token,
+                            id_card_side: "front",
+                            image: imageBase
+                        },
+                        dataType: "json",
+                        timeout: 30000,
+                        success: function (data) {
+                            alert("解析成功");
+                            alert(typeof data);
+                            alert(data);
+                            var idcard=data.words_result.住址.words;
+                            console.log(data);
+                            alert(idcard)
+                        },
+                        error: function (xhr) {
+                            console.log("请求解析失败");
+                        }
+                    });
+                }
+            }
+    </script>
+</body>
+</html>

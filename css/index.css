@@ -1,0 +1,270 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+html,body,.loginbox{
+	width:100%;
+	height:100%;
+	font-size: 12px;
+	box-sizing:border-box;
+	padding-top:10px;
+	background:#fff;
+	/*   2*12=24px  */
+}
+.loginbox .logindiv{
+	width:100%;
+	height:100%;
+}
+.loginbox .logindiv .loginimg{
+	width:100%;
+	height: 80px;
+	line-height:80px;
+	text-align: center;
+}
+.loginbox .logindiv .loginimg img{
+	vertical-align: middle;
+}
+.loginbox .logindiv h3{
+	width:100%;
+	height: 50px;
+	line-height:50px;
+	text-align:center;
+	font-size:22px;
+	margin-bottom: 50px;
+}
+.loginbox .logindiv .inputBox{
+	width:100%;
+	height:auto;
+}
+.loginbox .logindiv .inputBox p{
+	width: 100%;
+	height:40px;
+	line-height: 40px;
+	color:#999999;
+	padding-left:5%;
+}
+.loginbox .logindiv .inputBox .input{
+	width:100%;
+	height:45px;
+	padding: 0 10px;
+	box-sizing:border-box;
+	margin-bottom:10px;
+}
+.loginbox .logindiv .inputBox .input input{
+	width:96%;
+	height:100%;
+	border:none;
+	background:#fff;
+	font-size:14px;
+	outline:none;
+	border-bottom:1px solid #E1E1E1;
+	color:#323232;
+	margin-left:2%;
+}
+.loginbox .logindiv .loginBtn{
+	width:100%;
+	height:45px;
+	padding:0 20px;
+	box-sizing:border-box;
+	margin-top:30px;
+}
+.loginbox .logindiv .loginBtn button{
+	width:100%;
+	height:100%;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:18px;
+	border-radius: 5px;
+}
+.loginbox .logindiv .bottom{
+	width:100%;
+	height:15px;
+	margin-top:15px;
+	padding:0 20px;
+	box-sizing:border-box;
+}
+.loginbox .logindiv .bottom p{
+	width:100%;
+	height:100%;
+}
+.loginbox .logindiv .bottom p a{
+	color:#000;
+}
+.loginbox .logindiv .bottom p a:first-child{
+	float:left;
+}
+.loginbox .logindiv .bottom p a:last-child{
+	float:right;
+}
+.loginbox .mark{
+	width:100%;
+	height:100%;
+	position:fixed;
+	left:0;
+	top:0;
+	background:rgba(0,0,0,0.6);
+	display:none;
+	z-index:99999;
+}
+.loginbox .mark .markbox{
+	width:70%;
+	height:250px;
+	background:#fff;
+	position:absolute;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+	border-radius:5px;
+}
+.loginbox .mark .markbox h6{
+	width:100%;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	background:#2D7CFF;
+	color:#fff;
+	font-size:16px;
+	border-radius:5px 5px 0px 0px;
+}
+.loginbox .mark .markbox p{
+	width:100%;
+	height:150px;
+	box-sizing:border-box;
+	padding:30px 10px;
+	font-size:16px;
+}
+.loginbox .mark .markbox .remarkbtn{
+	width:100%;
+	height:60px;
+	padding:0 30px;
+}
+.loginbox .mark .markbox .remarkbtn button{
+	width:100%;
+	height:70%;
+	border:none;
+	background:#2D7CFF;
+	border-radius:30px;
+	color:#fff;
+	outline:none;
+}
+.loginbox .registerdiv,.loginbox .forgetdiv{
+	width:100%;
+	height:100%;
+	display:none;
+}
+.loginbox .registerdiv ul,.loginbox .forgetdiv ul{
+	width:100%;
+	height:80px;
+	line-height:100px;
+	text-align:center;
+	display:flex;
+	padding:0 30px;
+}
+.loginbox .registerdiv ul li,.loginbox .forgetdiv ul li{
+	float:left;
+	font-size:14px;
+	flex:1;
+	text-align:center;
+}
+.loginbox .registerdiv ul li.active,.loginbox .forgetdiv ul li.active{
+	color:#2D7CFF;
+}
+.loginbox .registerdiv ul li span,.loginbox .forgetdiv ul li span{
+	padding-left:10px;
+}
+.loginbox .registerdiv .inputBox .input:not(:first-child),.loginbox .forgetdiv .inputBox .input:not(:first-child){
+	display:none;
+}
+.loginbox .registerdiv .inputBox,.loginbox .forgetdiv .inputBox{
+	width:100%;
+	height:auto;
+}
+.loginbox .registerdiv .inputBox .input,.loginbox .forgetdiv .inputBox .input{
+	width:100%;
+	height:45px;
+	padding: 0 10px;
+	box-sizing:border-box;
+	margin-bottom:10px;
+}
+.loginbox .registerdiv .inputBox .input input,.loginbox .forgetdiv .inputBox .input input{
+	width:100%;
+	height:100%;
+	border:none;
+	background:#eee;
+	border-radius: 5px;
+	font-size:14px;
+	text-indent: 12px;
+	outline:none;
+}
+.loginbox .registerdiv .inputBox .input:nth-child(2),.loginbox .forgetdiv .inputBox .input:nth-child(2){
+	width:100%;
+	height:75px;
+}
+.loginbox .registerdiv .inputBox .input:nth-child(2) p,.loginbox .forgetdiv .inputBox .input:nth-child(2) p{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+}
+.loginbox .registerdiv .inputBox .input:nth-child(2) input,.loginbox .forgetdiv .inputBox .input:nth-child(2) input{
+	width:100%;
+	height:45px;
+}
+.loginbox .registerdiv .inputBox .input:last-child,.loginbox .forgetdiv .inputBox .input:last-child{
+	width:100%;
+	height:100px;
+	padding: 0 10px;
+	box-sizing:border-box;
+	margin-bottom:10px;
+}
+.loginbox .registerdiv .inputBox .input:last-child input,.loginbox .forgetdiv .inputBox .input:last-child input{
+	width:100%;
+	height:45px;
+	margin-bottom:10px;
+}
+.loginbox .registerdiv .buttondiv .button:not(:first-child),.loginbox .forgetdiv .buttondiv .button:not(:first-child){
+	display:none;
+}
+.loginbox .registerdiv .buttondiv,.loginbox .forgetdiv .buttondiv{
+	width:100%;
+	height:auto;
+	margin-top:50px;
+}
+.loginbox .registerdiv .buttondiv .button,.loginbox .forgetdiv .buttondiv .button{
+	width:100%;
+	height:45px;
+	padding:0 20px;
+	box-sizing:border-box;
+}
+.loginbox .registerdiv .buttondiv .button button,.loginbox .forgetdiv .buttondiv .button button{
+	width:100%;
+	height:100%;
+	background:#2D7CFF;
+	color:#fff;
+	border:none;
+	outline: none;
+	font-size:18px;
+	border-radius: 30px;
+}
+@media screen and (min-width: 375px){
+    html {
+        font-size: 14.0625px;   
+    }
+}
+@media screen and (min-width: 360px){
+    html {
+        font-size: 13.5px;
+    }
+}
+@media screen and (min-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}
